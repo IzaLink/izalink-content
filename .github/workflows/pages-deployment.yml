@@ -13,28 +13,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Afficher les fichiers les plus lourds
+      - name: Install Wrangler
+        run: npm install --global wrangler@4
+
+      - name: Check Cloudflare
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          echo "=== Fichiers les plus lourds ==="
-          find . -type f -printf "%s %p\n" | sort -nr | head -30
-          echo "=== Fichiers supérieurs à 25 MiB ==="
-          find . -type f -size +25M -print
+          wrangler whoami
+          wrangler pages project list
 
       - name: Deploy to Cloudflare Pages
-        id: deploy
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=izalink-content
-
-      - name: Afficher sortie Wrangler
-        if: always()
         env:
-          OUTPUT: ${{ steps.deploy.outputs.command-output }}
-          STDERR: ${{ steps.deploy.outputs.command-stderr }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
-          echo "=== OUTPUT ==="
-          echo "$OUTPUT"
-          echo "=== STDERR ==="
-          echo "$STDERR"
+          wrangler pages deploy . --project-name=izalink-content
