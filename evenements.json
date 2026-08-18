@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "titre": "Test",
-    "date": "12/09/2026",
+    "titre": "Journée porte Ouverte IZARET Formation",
+    "date": "25/09/2026",
     "heure": "09:00",
-    "lieu": "LTIL",
-    "description": "test",
+    "lieu": "Izaret FORMATION",
+    "description": "Les journées portes ouvertes d'IZARET Formation. N'oubliez pas, un jeu-concours est organisé ce jour.",
     "imageUrl": "",
     "pdfUrl": "",
-    "important": true,
+    "important": false,
     "actif": true
   }
 ]
