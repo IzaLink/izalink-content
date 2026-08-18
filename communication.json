@@ -1,17 +1,17 @@
 [
   {
-"    ""id"": 1,"
-"    ""titre"": ""Consigne importante"","
-"    ""contenu"": ""Merci de bien penser à vérifier vos documents avant chaque départ."","
-"    ""date"": ""14/08/2026"","
-"    ""actif"": true"
+    "id": 1,
+    "titre": "Consigne importante",
+    "contenu": "Merci de bien penser à vérifier vos documents avant chaque départ.",
+    "date": "14/08/2026"","
+    "actif": true"
   },
   
   {
-"  ""id"": 2,"
-"  ""titre"": ""Fortes chaleurs"","
-"  ""contenu"": ""Pensez à vous hydrater régulièrement et à respecter les consignes de prévention."","
-"  ""date"": ""18/08/2026"","
-"  ""actif"": true"
+  "id": 2,
+  "titre": "Fortes chaleurs",
+  "contenu": "Pensez à vous hydrater régulièrement et à respecter les consignes de prévention.",
+  "date": "18/08/2026",
+  "actif": true
 }
 ]
